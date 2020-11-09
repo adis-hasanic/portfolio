@@ -2,6 +2,10 @@
 
 .screen {float: left; display: block; width: 100%; padding-bottom: 120px;}
 
+.screen.dark {background-color: #000; color: #fff; }
+.screen.dark .header {background: #000; box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2); color: #fff;;}
+.screen.dark .header .navigation span.active {border-color: #fff;}
+
 .header {
     position: fixed;
     top: 0;
@@ -91,4 +95,43 @@
 .pagination span.active {
     background: #000;
     color: #fff;
+}
+
+.eleven-twenty img {max-width: 1120px;}
+
+.image-gallery {
+    width: auto;
+    height: auto;
+    margin-top: 40px;
+    display: inline-block;
+}
+
+.image-gallery:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.image-gallery-slides {
+ width: calc(100% - 80px);
+    margin: 0 40px;
+}
+
+.image-gallery-left-nav, .image-gallery-right-nav {
+    padding: 50px 0;
+}
+
+.image-gallery-left-nav .image-gallery-svg, .image-gallery-right-nav .image-gallery-svg {
+    width: 40px !important;
+    height: 48px !important;
+}
+.image-gallery-icon {opacity: 0.8;}
+
+.image-gallery-icon:hover {
+      opacity: 1; color: #fff; }
+      
+.image-gallery-icon:hover .image-gallery-svg {
+        transform: scale(1) !important; }
+
+*:focus {
+    outline: none !important;
 }

@@ -1,18 +1,32 @@
 import React from "react";
-import "./App.css";
 import {
 BrowserRouter as Router,
 Switch,
 Route,
 Link
 } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop.js";
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
+import "./App.css";
 
-export default function App() {
+const images = [
+{ original: '/portfolio/flowdash/1.jpg', originalClass: 'eleven-twenty', },
+{ original: '/portfolio/flowdash/2.jpg', originalClass: 'eleven-twenty', },
+{ original: '/portfolio/flowdash/3.jpg', originalClass: 'eleven-twenty', },
+{ original: '/portfolio/flowdash/4.jpg', originalClass: 'eleven-twenty', },
+{ original: '/portfolio/flowdash/5.jpg', originalClass: 'eleven-twenty', }
+];
+
+export default App;
+
+function App() {
 return (
 <Router >
+<ScrollToTop />
 <div>
 <Switch>
-    <Route path="/two" onUpdate={() => window.scrollTo(0, 0)} >
+    <Route path="/two">
 <Two />
 </Route>
 <Route path="/about">
@@ -32,7 +46,7 @@ return (
 
 function Home() {
 return (
-<div className="screen">
+<div className="screen dark">
     
 <div className="header">
 <div className="container">
@@ -51,6 +65,16 @@ return (
 <div className="subheadline">Build a workflow app without coding.</div>
 <div className="description">Since Aug 2020, as a freelancer, designing UI/UX at Flowdash, early-stage YC-backed startup based in San Francisco. Working closely with CEO and CTO on making it easy for ops teams to build a workflow app through setting up fields, stages, actions, triggers, timers (SLAs), layouts, etc. as well as to use it continuosly.</div>
 </div>
+<ImageGallery 
+items={images}  
+showThumbnails={false} 
+showFullscreenButton={false} 
+infinite={false}
+showPlayButton={false}
+lazyLoad={true}
+slideDuration={0}
+/>
+
 </div>
 
 <div className="section">
@@ -131,6 +155,14 @@ return (
 <div className="headline">Engine</div>
 <div className="subheadline">Build a workflow app without coding.</div>
 <div className="description">Since Aug 2020, as a freelancer, designing UI/UX at Flowdash, early-stage YC-backed startup based in San Francisco. Working closely with CEO and CTO on making it easy for ops teams to build a workflow app through setting up fields, stages, actions, triggers, timers (SLAs), layouts, etc. as well as to use it continuosly.</div>
+</div>
+</div>
+
+<div className="section">
+<div className="text">
+<div className="headline">Typen</div>
+<div className="subheadline">Distraction-free writing app.</div>
+<div className="description">In 2017, I founded, designed and bootstrapped development of Typen, a writing app that helps the user focus on creative part of writing with features like customizable look and built-in storage. Several thousand writers signed up within 2 months of launch and positive feedback on design was sent from amateur novelists as well as a professional dramaturge.</div>
 </div>
 </div>
 
